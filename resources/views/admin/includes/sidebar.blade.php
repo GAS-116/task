@@ -5,7 +5,7 @@
     <div class="sidebar">
         <ul class="nav nav-pills nav-sidebar flex-column pt-3" data-widget="treeview" role="menu">
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('admin.user.index') }}" class="nav-link">
                     <i class="far fa-user nav-icon"></i>
                     <p>Пользователи</p>
                 </a>

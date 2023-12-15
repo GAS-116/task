@@ -25,14 +25,14 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="col-3 mb-3">
-                    <a href="{{ route('admin.user.create') }}" class="btn btn-block btn-primary btn-lg">Добавить</a>
+                    <a href="" class="btn btn-block btn-primary btn-lg">Добавить</a>
                 </div>
 
                 <div class="row">
                     <div class="col-8">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Все категории</h3>
+                                <h3 class="card-title">Все пользователи</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
@@ -40,7 +40,8 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Название</th>
+                                        <th>Логин</th>
+                                        <th>Роль</th>
                                         <th colspan="2">Действие</th>
                                     </tr>
                                     </thead>
@@ -49,14 +50,9 @@
                                         <tr>
                                             <td>{{ $user->id }}</td>
                                             <td>{{ $user->name }}</td>
+                                            <td>{{ $user->role }}</td>
                                             <td>
-                                                <a href="{{ route('admin.user.show', $user->id) }}" class="mr-3"><i class="fa fa-solid fa-eye"></i></a>
-                                                <a href="{{ route('admin.user.edit', $user->id) }}" class="mr-3"><i class="fa fa-solid fa-pen"></i></a>
-                                                <form action="{{ route('admin.user.delete', $user->id) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="border-0 bg-transparent"><i class="fa fa-solid fa-trash text-blue" role="button"></i></button>
-                                                </form>
+                                                operations
                                             </td>
                                         </tr>
                                     @endforeach
