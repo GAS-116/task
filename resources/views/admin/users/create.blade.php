@@ -36,6 +36,14 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="name">Пароль</label>
+                        <input id="name" type="password" class="form-control" placeholder="Ввести пароль" name="password">
+                        @error('password')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label for="email">Email</label>
                         <input id="email" type="text" class="form-control" placeholder="Ввести email пользователя" name="email">
                         @error('email')
