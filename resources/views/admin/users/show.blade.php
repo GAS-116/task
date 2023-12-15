@@ -7,8 +7,9 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Пользователи</h1>
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <h1 class="m-0 mr-2">Пользователь {{ $user->name }}</h1>
+                        <a href="{{ route('admin.user.edit', $user->id) }}" class="text-success"><i class="fa fa-solid fa-pen"></i></a>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -24,38 +25,28 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <div class="col-3 mb-3">
-                    <a href="{{ route('admin.user.create') }}" class="btn btn-block btn-primary btn-lg">Добавить</a>
-                </div>
-
                 <div class="row">
                     <div class="col-8">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Все пользователи</h3>
+                                <h3 class="card-title">{{ $user->name }}</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Логин</th>
-                                        <th>Роль</th>
-                                        <th colspan="2">Действие</th>
-                                    </tr>
-                                    </thead>
                                     <tbody>
-                                    @foreach($users as $user)
                                         <tr>
+                                            <td>ID</td>
                                             <td>{{ $user->id }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->role }}</td>
-                                            <td>
-                                                <a href="{{ route('admin.user.edit', $user->id) }}" class="mr-3"><i class="fa fa-solid fa-pen"></i></a>
-                                            </td>
                                         </tr>
-                                    @endforeach
+                                        <tr>
+                                            <td>Название</td>
+                                            <td>{{ $user->name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td>{{ $user->email }}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
