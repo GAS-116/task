@@ -24,7 +24,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <form action="" method="POST" >
+                <form action="{{ route('admin.post.store') }}" method="POST" >
                     @csrf
                     <div class="form-group w-25">
                         <label for="title">Название</label>
