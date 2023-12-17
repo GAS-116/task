@@ -23,6 +23,16 @@ class PostService
 
     public function update($data, $post)
     {
-        ///
+        try{
+            Db::beginTransaction();
+            $post->update($data);
+            DB::commit();
+        }
+        catch (\Exception $exception){
+            DB::rollBack();
+            abort(500);
+        }
+
+        return $post;
     }
 }

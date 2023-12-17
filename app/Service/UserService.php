@@ -34,5 +34,7 @@ class UserService
             DB::rollBack();
             abort(500);
         }
+
+        return $user;
     }
 }
