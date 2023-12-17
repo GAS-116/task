@@ -52,6 +52,7 @@
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->role }}</td>
                                             <td>
+                                                <a href="{{ route('admin.user.show', $user->id) }}" class="mr-3"><i class="fa fa-solid fa-eye"></i></a>
                                                 <a href="{{ route('admin.user.edit', $user->id) }}" class="mr-3"><i class="fa fa-solid fa-pen"></i></a>
                                             </td>
                                         </tr>

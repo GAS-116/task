@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Post;
+namespace App\Http\Controllers\Admin\User;
 
-use App\Http\Requests\Admin\Post\UpdateRequest;
-use App\Models\Post;
+use App\Http\Requests\Admin\User\UpdateRequest;
+use App\Models\User;
 
 class UpdateController extends BaseController
 {
-    public function __invoke(UpdateRequest $request, Post $post)
+    public function __invoke(UpdateRequest $request, User $user)
     {
         $data = $request->validated();
-        $post = $this->service->update($data, $post);
+        $user = $this->service->update($data, $user);
 
-        return redirect()->route('admin.post.show', compact('post'));
+        return redirect()->route('admin.user.show', compact('user'));
     }
 }

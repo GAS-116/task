@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Редактировать пользователя {{ $user->title }}</h1>
+                        <h1 class="m-0">Редактировать пользователя {{ $user->name }}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -24,21 +24,13 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <form action="" method="POST" class="w-25">
+                <form action="{{ route('admin.user.update', $user->id) }}" method="POST" class="w-25">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
-                        <label for="title">Логин</label>
-                        <input id="title" type="text" class="form-control" placeholder="Обновить логин" name="title" value="{{ $user->name }}">
-                        @error('title')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label for="title">Пароль</label>
-                        <input id="title" type="text" class="form-control" placeholder="Изменить пароль" name="title">
-                        @error('password')
+                        <label for="name">Логин</label>
+                        <input id="name" type="text" class="form-control" placeholder="Обновить логин" name="name" value="{{ $user->name }}">
+                        @error('name')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>

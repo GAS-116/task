@@ -22,4 +22,17 @@ class UserService
             abort(500);
         }
     }
+
+    public function update($data, $user)
+    {
+        try{
+            Db::beginTransaction();
+            $user->update($data);
+            DB::commit();
+        }
+        catch (\Exception $exception){
+            DB::rollBack();
+            abort(500);
+        }
+    }
 }
