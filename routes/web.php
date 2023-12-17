@@ -33,7 +33,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function(){
         Route::get('/{user}/edit', 'EditController')->name('admin.user.edit');
         Route::patch('/{user}', 'UpdateController')->name('admin.user.update');
         Route::get('/{user}', 'ShowController')->name('admin.user.show');
-        /*Route::delete('/{user}', 'DeleteController')->name('admin.user.delete');*/
+        Route::delete('/{user}', 'DeleteController')->name('admin.user.delete');
     });
 });
 

@@ -54,6 +54,11 @@
                                             <td>
                                                 <a href="{{ route('admin.user.show', $user->id) }}" class="mr-3"><i class="fa fa-solid fa-eye"></i></a>
                                                 <a href="{{ route('admin.user.edit', $user->id) }}" class="mr-3"><i class="fa fa-solid fa-pen"></i></a>
+                                                <form action="{{ route('admin.user.delete', $user->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="border-0 bg-transparent"><i class="fa fa-solid fa-trash text-blue" role="button"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
