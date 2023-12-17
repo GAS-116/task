@@ -7,8 +7,9 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Посты</h1>
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <h1 class="m-0 mr-2">Пост: {{ $post->title }}</h1>
+                        <a href="" class="text-success"><i class="fa fa-solid fa-pen"></i></a>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -24,36 +25,28 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <div class="col-3 mb-3">
-                    <a href="{{ route('admin.post.create') }}" class="btn btn-block btn-primary btn-lg">Добавить</a>
-                </div>
-
                 <div class="row">
                     <div class="col-8">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Все посты</h3>
+                                <h3 class="card-title">{{ $post->title }}</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Название</th>
-                                        <th colspan="2">Действие</th>
-                                    </tr>
-                                    </thead>
                                     <tbody>
-                                    @foreach($posts as $post)
                                         <tr>
+                                            <td>ID</td>
                                             <td>{{ $post->id }}</td>
-                                            <td>{{ $post->title }}</td>
-                                            <td>
-                                                <a href="{{ route('admin.post.show', $post->id) }}" class="mr-3"><i class="fa fa-solid fa-eye"></i></a>
-                                            </td>
                                         </tr>
-                                    @endforeach
+                                        <tr>
+                                            <td>Название</td>
+                                            <td>{{ $post->title }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Содержимое</td>
+                                            <td>{{ $post->content }}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
