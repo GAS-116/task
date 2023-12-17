@@ -35,10 +35,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
         Route::get('/{user}', 'ShowController')->name('admin.user.show');
         Route::delete('/{user}', 'DeleteController')->name('admin.user.delete');
     });
+
+    // Posts
+    Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function (){
+        Route::get('/', 'IndexController')->name('admin.post.index');
+    });
 });
 
 Auth::routes(['verify' => true]);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
