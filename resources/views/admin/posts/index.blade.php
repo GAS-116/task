@@ -69,6 +69,9 @@
                     </div>
                 </div>
 
+                <div>
+                    {{ $posts->links() }}
+                </div>
             </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->

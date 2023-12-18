@@ -71,6 +71,10 @@
                     </div>
                 </div>
 
+                <div>
+                    {{ $users->links() }}
+                </div>
+
             </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
